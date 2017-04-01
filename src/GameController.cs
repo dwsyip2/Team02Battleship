@@ -25,7 +25,17 @@ public static class GameController
 	/// <value>The current state</value>
 	/// <returns>The current state</returns>
 	public static GameState CurrentState {
-		get { return _state.Peek(); }
+        get
+        {
+            try
+            {
+                return _state.Peek();
+            }
+            catch (Exception)
+            {
+				return GameState.ViewingMainMenu;
+            }
+        }
 	}
 
 	/// <summary>

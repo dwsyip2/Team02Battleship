@@ -6,7 +6,7 @@ using System.Data;
 using System.Diagnostics;
 */
 using System;
-/// <summary>
+/// <summary>c
 /// The SeaGridAdapter allows for the change in a sea grid view. Whenever a ship is
 /// presented it changes the view into a sea tile instead of a ship tile.
 /// </summary>
