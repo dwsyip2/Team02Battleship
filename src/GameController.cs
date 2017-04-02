@@ -370,7 +370,8 @@ public static class GameController
 	/// </summary>
 	public static void EndCurrentState()
 	{
-		_state.Pop();
+        if(_state.Count != 0)
+		    _state.Pop();
 	}
 
 	/// <summary>
