@@ -67,3 +67,26 @@ C:\Users\User\Desktop\Sem 7\SWE20001 Software Development Tools & Practices\Asse
 C:\Users\User\Desktop\Sem 7\SWE20001 Software Development Tools & Practices\Assessment\Pass Task 4\Team02Battleship\bin\Debug\MyGame.exe
 C:\Users\User\Desktop\Sem 7\SWE20001 Software Development Tools & Practices\Assessment\Pass Task 4\Team02Battleship\bin\Debug\SwinGame.dll
 C:\Users\User\Desktop\Sem 7\SWE20001 Software Development Tools & Practices\Assessment\Pass Task 4\Team02Battleship\obj\x86\Debug-Windows\MyGame.exe
+H:\Team02Battleship\bin\Debug\Resources\animations\startup.txt
+H:\Team02Battleship\bin\Debug\Resources\bundles\FileDialog.txt
+H:\Team02Battleship\bin\Debug\Resources\bundles\splash.txt
+H:\Team02Battleship\bin\Debug\Resources\fonts\arial.ttf
+H:\Team02Battleship\bin\Debug\Resources\fonts\cour.ttf
+H:\Team02Battleship\bin\Debug\Resources\fonts\maven_pro_regular.ttf
+H:\Team02Battleship\bin\Debug\Resources\images\fdFile.png
+H:\Team02Battleship\bin\Debug\Resources\images\fdFolder.png
+H:\Team02Battleship\bin\Debug\Resources\images\FileDialog_Active.png
+H:\Team02Battleship\bin\Debug\Resources\images\FileDialog_Background.png
+H:\Team02Battleship\bin\Debug\Resources\images\FileDialog_Inactive.png
+H:\Team02Battleship\bin\Debug\Resources\images\FileDialog_Scroll.png
+H:\Team02Battleship\bin\Debug\Resources\images\FileDialog_ScrollSmall.png
+H:\Team02Battleship\bin\Debug\Resources\images\Swinburne.jpg
+H:\Team02Battleship\bin\Debug\Resources\images\SwinGameAni.png
+H:\Team02Battleship\bin\Debug\Resources\panels\FileDialog.txt
+H:\Team02Battleship\bin\Debug\Resources\sounds\error.wav
+H:\Team02Battleship\bin\Debug\Resources\sounds\SwinGameStart.wav
+H:\Team02Battleship\bin\Debug\Resources\SwinGame.icns
+H:\Team02Battleship\bin\Debug\Resources\SwinGame.ico
+H:\Team02Battleship\bin\Debug\MyGame.exe
+H:\Team02Battleship\bin\Debug\SwinGame.dll
+H:\Team02Battleship\obj\x86\Debug-Windows\MyGame.exe
