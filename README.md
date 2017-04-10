@@ -16,3 +16,4 @@ C# version
 - Play icon disappear due to clicking outside the grid
 - Status of the game flow do not updated 
 - Location of the ships does not according to the locations where user clicked at
+- Shot increased when clicking same "Hit"'ed tile
