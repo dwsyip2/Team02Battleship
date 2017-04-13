@@ -243,6 +243,29 @@ static class UtilityFunctions
 			default:
 				SwinGame.ClearScreen();
 				break;
+			case GameState.HowToPlay:
+
+			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
+
+			SwinGame.DrawText ("How To Play : BATTLESHIP", Color.White, GameResources.GameFont ("Courier"), 0, 10);
+			SwinGame.DrawText ("*DIFFICULTY", Color.White, GameResources.GameFont ("Courier"), 0, 40);
+			SwinGame.DrawText ("Choose between Easy, Medium and Hard", Color.White, GameResources.GameFont ("Courier"), 0, 50);
+			SwinGame.DrawText ("*HIGH SCORES", Color.White, GameResources.GameFont ("Courier"), 0, 70);
+			SwinGame.DrawText ("Click on the scores button to view the Player's high score", Color.White, GameResources.GameFont ("Courier"), 0, 80);
+			SwinGame.DrawText ("*OBJECTIVE", Color.White, GameResources.GameFont ("Courier"), 0, 100);
+			SwinGame.DrawText ("Destroy the opponent's ships", Color.White, GameResources.GameFont ("Courier"), 0, 110);
+			SwinGame.DrawText ("*SCORING", Color.White, GameResources.GameFont ("Courier"), 0, 130);
+			SwinGame.DrawText ("Each time the player hits the opponent's ship, 1 point will be given", Color.White, GameResources.GameFont ("Courier"), 0, 140);
+			SwinGame.DrawText ("*Special Moves", Color.White, GameResources.GameFont ("Courier"), 0, 160);
+			SwinGame.DrawText ("Rotate or Shuffle the ship's position", Color.White, GameResources.GameFont ("Courier"), 0, 170);
+			SwinGame.DrawText ("*MUTE", Color.White, GameResources.GameFont ("Courier"), 0, 190);
+			SwinGame.DrawText ("Click on the mute button to turn off the sound and music", Color.White, GameResources.GameFont ("Courier"), 0, 200);
+
+			if (SwinGame.KeyTyped (KeyCode.vk_ESCAPE)) {
+				GameController.EndCurrentState ();
+			}
+
+			break;
 		}
 
 		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
