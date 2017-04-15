@@ -93,7 +93,6 @@ public static class GameResources
 	/// </summary>
 	/// <param name="music">Name of music</param>
 	/// <returns>The music with this name</returns>
-
 	public static Music GameMusic(string music)
 	{
 		return _Music [music];

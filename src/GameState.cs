@@ -27,9 +27,14 @@ public enum GameState
 	HowToPlay,
 
 	/// <summary>
-	/// The player is altering the game settings
+	/// The player is altering the game difficulty
 	/// </summary>
-	AlteringSettings,
+	AlteringSetup,
+
+	/// <summary>
+	/// The player is altering the game sound n' music
+	/// </summary>
+	AlteringSetting,
 
 	/// <summary>
 	/// Players are deploying their ships

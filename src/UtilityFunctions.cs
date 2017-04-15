@@ -229,7 +229,7 @@ static class UtilityFunctions
 		switch (GameController.CurrentState) {
 			case GameState.ViewingMainMenu:
 			case GameState.ViewingGameMenu:
-			case GameState.AlteringSettings:
+			case GameState.AlteringSetting:
 			case GameState.ViewingHighScores:
 				SwinGame.DrawBitmap(GameResources.GameImage("Menu"), 0, 0);
 				break;

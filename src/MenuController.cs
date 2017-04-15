@@ -19,6 +19,7 @@ static class MenuController
 		new string[] {
 			"PLAY",
 			"SETUP",
+			"SETTINGS",
 			"SCORES",
 			"HOW TO PLAY",
 			"QUIT"
@@ -32,36 +33,45 @@ static class MenuController
 			"EASY",
 			"MEDIUM",
 			"HARD"
+		},
+		new string[] {
+			"SOUND ON/OFF",
+			"MUSIC ON/OFF"
 		}
-
 	};
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
 	private const int MENU_GAP = 0;
-	private const int BUTTON_WIDTH = 75;
+	private const int BUTTON_WIDTH = 100;
 	private const int BUTTON_HEIGHT = 15;
 	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
 
 	private const int TEXT_OFFSET = 0;
 	private const int MAIN_MENU = 0;
 	private const int GAME_MENU = 1;
-
 	private const int SETUP_MENU = 2;
+	private const int SETTING_MENU = 3;
+
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
-	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
-	private const int MAIN_MENU_HOW_TO_PLAY_BUTTON = 3;
+	private const int MAIN_MENU_TOP_SCORES_BUTTON = 3;
+	private const int MAIN_MENU_HOW_TO_PLAY_BUTTON = 4;
 
-	private const int MAIN_MENU_QUIT_BUTTON = 4;
+	private const int MAIN_MENU_QUIT_BUTTON = 5;
+	private const int MAIN_MENU_SETTING_BUTTON = 2;
+
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
-
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
+
+	private const int SETTING_MENU_SOUND_TOGGLE = 0;
+	private const int SETTING_MENU_MUSIC_TOGGLE = 1;
+
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
-
 	private const int GAME_MENU_QUIT_BUTTON = 2;
+
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
@@ -83,6 +93,19 @@ static class MenuController
 
 		if (!handled) {
 			HandleMenuInput(MAIN_MENU, 0, 0);
+		}
+	}
+
+	/// <summary>
+	/// Handles the processing of user input when the main menu is showing
+	/// </summary>
+	public static void HandleSettingMenuInput ()
+	{
+		bool handled = false;
+		handled = HandleMenuInput (SETTING_MENU, 1, 2);
+
+		if (!handled) {
+			HandleMenuInput (MAIN_MENU, 0, 0);
 		}
 	}
 
@@ -152,13 +175,19 @@ static class MenuController
 		DrawButtons(GAME_MENU);
 	}
 
+	public static void DrawSetting ()
+	{
+		DrawButtons (MAIN_MENU);
+		DrawButtons (SETTING_MENU, 1, 2);
+	}
+
 	/// <summary>
 	/// Draws the settings menu to the screen.
 	/// </summary>
 	/// <remarks>
 	/// Also shows the main menu
 	/// </remarks>
-	public static void DrawSettings()
+	public static void DrawSetup()
 	{
 		//Clears the Screen to Black
 		//SwinGame.DrawText("Settings", Color.White, GameResources.GameFont("ArialLarge"), 50, 50)
@@ -244,6 +273,9 @@ static class MenuController
 			case SETUP_MENU:
 				PerformSetupMenuAction(button);
 				break;
+			case SETTING_MENU:
+				PerformSettingMenuAction (button);
+				break;
 			case GAME_MENU:
 				PerformGameMenuAction(button);
 				break;
@@ -261,7 +293,10 @@ static class MenuController
 				GameController.StartGame();
 				break;
 			case MAIN_MENU_SETUP_BUTTON:
-				GameController.AddNewState(GameState.AlteringSettings);
+				GameController.AddNewState(GameState.AlteringSetup);
+				break;
+			case MAIN_MENU_SETTING_BUTTON:
+				GameController.AddNewState (GameState.AlteringSetting);
 				break;
 			case MAIN_MENU_TOP_SCORES_BUTTON:
 				GameController.AddNewState(GameState.ViewingHighScores);
@@ -296,6 +331,23 @@ static class MenuController
 		GameController.EndCurrentState();
 	}
 
+	/// <summary>
+	/// The setup menu was clicked, perform the button's action.
+	/// </summary>
+	/// <param name="button">the button pressed</param>
+	private static void PerformSettingMenuAction (int button)
+	{
+		switch (button) {
+			case SETTING_MENU_SOUND_TOGGLE:
+				GameController.ToggleSound ();
+			break;
+			case SETTING_MENU_MUSIC_TOGGLE:
+				GameController.ToggleMusic ();
+			break;
+		}
+		//Always end state - handles exit button as well
+		GameController.EndCurrentState ();
+	}
 	/// <summary>
 	/// The game menu was clicked, perform the button's action.
 	/// </summary>
