@@ -403,7 +403,7 @@ public static class GameController
 	public static void ToggleMusic ()
 	{
 		MUSICSTATE = !MUSICSTATE;
-		if (MUSICSTATE)
+		if (!MUSICSTATE)
 			SwinGame.StopMusic ();
 		else
 			SwinGame.PlayMusic(GameResources.GameMusic ("Background"));

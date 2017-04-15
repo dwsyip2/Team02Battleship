@@ -35,8 +35,8 @@ static class MenuController
 			"HARD"
 		},
 		new string[] {
-			"SOUND ON/OFF",
-			"MUSIC ON/OFF"
+			"SOUND ON",
+			"MUSIC ON"
 		}
 	};
 	private const int MENU_TOP = 575;
@@ -340,9 +340,17 @@ static class MenuController
 		switch (button) {
 			case SETTING_MENU_SOUND_TOGGLE:
 				GameController.ToggleSound ();
+				if (GameController.getSoundState)
+					_menuStructure [SETTING_MENU] [0] = "SOUND ON";
+				else
+					_menuStructure [SETTING_MENU] [0] = "SOUND OFF";
 			break;
 			case SETTING_MENU_MUSIC_TOGGLE:
 				GameController.ToggleMusic ();
+				if (GameController.getMusicState)
+					_menuStructure [SETTING_MENU] [1] = "MUSIC ON";
+				else
+					_menuStructure [SETTING_MENU] [1] = "MUSIC OFF";
 			break;
 		}
 		//Always end state - handles exit button as well
