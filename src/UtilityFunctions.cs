@@ -36,7 +36,7 @@ static class UtilityFunctions
 	private static readonly Color SHIP_OUTLINE_COLOR = Color.White;
 
 	private static readonly Color MESSAGE_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
-	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (200, 167, 100, 255);
+	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (88, 147, 76, 255);
 	public const int ANIMATION_CELLS = 7;
 
 	public const int FRAMES_PER_CELL = 8;
@@ -234,6 +234,7 @@ static class UtilityFunctions
 			case GameState.ViewingMainMenu:
 			case GameState.ViewingGameMenu:
 			case GameState.AlteringSetting:
+			case GameState.AlteringSetup:
 			case GameState.ViewingHighScores:
 				SwinGame.DrawBitmap(GameResources.GameImage("Menu"), 0, 0);
 				break;
@@ -250,19 +251,19 @@ static class UtilityFunctions
 			case GameState.HowToPlay:
 
 			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
-			SwinGame.DrawText ("How To Play : BATTLESHIP", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 10 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("*DIFFICULTY", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 50 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("Choose between Easy, Medium and Hard", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 70 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("*HIGH SCORES", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 100 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("Click on the scores button to view the Player's high score", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 120 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("*OBJECTIVE", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 150 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("Destroy the opponent's ships", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 170 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("*SCORING", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 200 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("Each time the player hits the opponent's ship, 1 point will be given", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 220 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("*Special Moves", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 250 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("Rotate or Shuffle the ship's position", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 280 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("*MUTE", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 310 + HOWTOPLAYOFFSET_TOP);
-			SwinGame.DrawText ("Click on the mute button to turn off the sound and music", MENU_COLOR, GameResources.GameFont ("Courier"), HOWTOPLAYOFFSET_LEFT, 340 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("How To Play : BATTLESHIP", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 10 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("*DIFFICULTY", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 50 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("Choose between Easy, Medium and Hard", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 70 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("*HIGH SCORES", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 100 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("Click on the scores button to view the Player's high score", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 120 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("*OBJECTIVE", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 150 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("Destroy the opponent's ships", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 170 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("*SCORING", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 200 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("Each time the player hits the opponent's ship, 1 point will be given", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 220 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("*Special Moves", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 250 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("Rotate or Shuffle the ship's position", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 280 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("*MUTE", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 310 + HOWTOPLAYOFFSET_TOP);
+			SwinGame.DrawText ("Click on the mute button to turn off the sound and music", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 340 + HOWTOPLAYOFFSET_TOP);
 
 			if (SwinGame.KeyTyped (KeyCode.vk_ESCAPE)) {
 				GameController.EndCurrentState ();

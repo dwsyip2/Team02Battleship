@@ -39,14 +39,14 @@ static class MenuController
 			"MUSIC ON"
 		}
 	};
-	private const int MENU_TOP = 575;
-	private const int MENU_LEFT = 30;
+	private const int MENU_TOP = 150;
+	private const int MENU_LEFT = 575;
 	private const int MENU_GAP = 0;
-	private const int BUTTON_WIDTH = 100;
-	private const int BUTTON_HEIGHT = 15;
+	private const int BUTTON_WIDTH = 150;
+	private const int BUTTON_HEIGHT = 50;
 	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
 
-	private const int TEXT_OFFSET = 0;
+	private const int TEXT_OFFSET = -10;
 	private const int MAIN_MENU = 0;
 	private const int GAME_MENU = 1;
 	private const int SETUP_MENU = 2;
@@ -219,17 +219,18 @@ static class MenuController
 	private static void DrawButtons(int menu, int level, int xOffset)
 	{
 		int btnTop = 0;
-
-		btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
+		int btnLeft = 0;
+		btnLeft = MENU_LEFT - BUTTON_SEP * (level);
 		int i = 0;
 		for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
-			int btnLeft = 0;
-			btnLeft = MENU_LEFT + BUTTON_SEP * (i + xOffset);
-			//SwinGame.FillRectangle(Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT)
-			SwinGame.DrawTextLines(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
-
-			if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
-				SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			btnTop = MENU_TOP + (MENU_GAP + BUTTON_HEIGHT) * (i + xOffset);
+			SwinGame.FillRectangle (Color.Black, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			SwinGame.DrawRectangle (Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			SwinGame.DrawTextLines(_menuStructure [menu] [i], MENU_COLOR, Color.Transparent, GameResources.GameFont ("Menu"), FontAlignment.AlignRight, btnLeft + TEXT_OFFSET, btnTop+ BUTTON_HEIGHT/2+TEXT_OFFSET/2, BUTTON_WIDTH, BUTTON_HEIGHT);
+			if (SwinGame.MouseDown (MouseButton.LeftButton) & IsMouseOverMenu (i, level, xOffset)) {
+				SwinGame.DrawRectangle (Color.Red, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			} else if (IsMouseOverMenu (i, level, xOffset)) {
+				SwinGame.DrawRectangle (HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
 			}
 		}
 	}
@@ -253,8 +254,8 @@ static class MenuController
 	/// <returns>true if the mouse is over the button</returns>
 	private static bool IsMouseOverMenu(int button, int level, int xOffset)
 	{
-		int btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
-		int btnLeft = MENU_LEFT + BUTTON_SEP * (button + xOffset);
+		int btnTop = MENU_TOP + (MENU_GAP + BUTTON_HEIGHT) *(button + xOffset);
+		int btnLeft = MENU_LEFT - BUTTON_SEP * (level);
 
 		return UtilityFunctions.IsMouseInRectangle(btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
 	}
@@ -305,7 +306,7 @@ static class MenuController
 		     	GameController.AddNewState (GameState.HowToPlay);
 		    	break;
 			case MAIN_MENU_QUIT_BUTTON:
-				GameController.EndCurrentState();
+				GameController.AddNewState (GameState.Quitting);
 				break;
 		}
 	}
