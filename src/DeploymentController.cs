@@ -143,6 +143,12 @@ static class DeploymentController
 			if (i >= 0) {
 				if (sn == _selectedShip) {
 					SwinGame.DrawBitmap(GameResources.GameImage("SelectedShip"), SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT);
+					SwinGame.DrawText ("Tug", Color.White, GameResources.GameFont ("Courier"), 200, 100);
+					SwinGame.DrawText ("Submarine", Color.White, GameResources.GameFont ("Courier"), 200, 180);
+					SwinGame.DrawText ("Destroyer", Color.White, GameResources.GameFont ("Courier"), 200, 270);
+					SwinGame.DrawText ("Battleship", Color.White, GameResources.GameFont ("Courier"), 200, 360);
+					SwinGame.DrawText ("Aircraft carrier", Color.White, GameResources.GameFont ("Courier"), 200, 450);
+
 					//    SwinGame.FillRectangle(Color.LightBlue, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
 					//Else
 					//    SwinGame.FillRectangle(Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)

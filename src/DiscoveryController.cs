@@ -69,6 +69,38 @@ static class DiscoveryController
 		SwinGame.DrawText(GameController.HumanPlayer.Shots.ToString(), Color.White, GameResources.GameFont ("Menu"), SCORES_LEFT, SHOTS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont ("Menu"), SCORES_LEFT, HITS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont ("Menu"), SCORES_LEFT, SPLASH_TOP);
+
+		SwinGame.DrawText ("Tug", Color.White, GameResources.GameFont ("Courier"), 500, 60);
+		SwinGame.DrawText ("Submarine", Color.White, GameResources.GameFont ("Courier"), 500, 70);
+		SwinGame.DrawText ("Destroyer", Color.White, GameResources.GameFont ("Courier"), 500, 80);
+		SwinGame.DrawText ("Battleship", Color.White, GameResources.GameFont ("Courier"), 500, 90);
+		SwinGame.DrawText ("Aircraft carrier", Color.White, GameResources.GameFont ("Courier"), 500, 100);
+
+		if (GameController.ComputerPlayer [ShipName.Tug].IsDestroyed) {
+			SwinGame.DrawText ("Terminated", Color.Red, GameResources.GameFont ("Courier"), 650, 60);
+		} else {
+			SwinGame.DrawText ("Deployed", Color.LimeGreen, GameResources.GameFont ("Courier"), 650, 60);
+		}
+		if (GameController.ComputerPlayer [ShipName.Submarine].IsDestroyed) {
+			SwinGame.DrawText ("Terminated", Color.Red, GameResources.GameFont ("Courier"), 650, 70);
+		} else {
+			SwinGame.DrawText ("Deployed", Color.LimeGreen, GameResources.GameFont ("Courier"), 650, 70);
+		}
+		if (GameController.ComputerPlayer [ShipName.Battleship].IsDestroyed) {
+			SwinGame.DrawText ("Terminated", Color.Red, GameResources.GameFont ("Courier"), 650, 90);
+		} else {
+			SwinGame.DrawText ("Deployed", Color.LimeGreen, GameResources.GameFont ("Courier"), 650, 90);
+		}
+		if (GameController.ComputerPlayer [ShipName.AircraftCarrier].IsDestroyed) {
+			SwinGame.DrawText ("Terminated", Color.Red, GameResources.GameFont ("Courier"), 650, 100);
+		} else {
+			SwinGame.DrawText ("Deployed", Color.LimeGreen, GameResources.GameFont ("Courier"), 650, 100);
+		}
+		if (GameController.ComputerPlayer [ShipName.Destroyer].IsDestroyed) {
+			SwinGame.DrawText ("Terminated", Color.Red, GameResources.GameFont ("Courier"), 650, 80);
+		} else {
+			SwinGame.DrawText ("Deployed", Color.LimeGreen, GameResources.GameFont ("Courier"), 650, 80);
+		}
 	}
 
 }
