@@ -251,6 +251,7 @@ static class UtilityFunctions
 			case GameState.HowToPlay:
 
 			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
+			SwinGame.FillRectangle (SwinGame.RGBAColor(255,0,120,70), HOWTOPLAYOFFSET_LEFT - 20, HOWTOPLAYOFFSET_TOP - 20, 495, 410);
 			SwinGame.DrawText ("How To Play : BATTLESHIP", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 10 + HOWTOPLAYOFFSET_TOP);
 			SwinGame.DrawText ("*DIFFICULTY", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 50 + HOWTOPLAYOFFSET_TOP);
 			SwinGame.DrawText ("Choose between Easy, Medium and Hard", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 70 + HOWTOPLAYOFFSET_TOP);

@@ -307,6 +307,7 @@ public static class GameController
 				EndingGameController.HandleEndOfGameInput();
 				break;
 			case GameState.ViewingHighScores:
+			case GameState.HowToPlay:
 				HighScoreController.HandleHighScoreInput();
 				break;
 		}
