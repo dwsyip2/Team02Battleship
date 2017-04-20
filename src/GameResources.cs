@@ -53,11 +53,8 @@ public static class GameResources
 	private static void LoadMusic()
 	{
 		NewMusic("Background", "horrordrone.mp3");
-<<<<<<< Updated upstream
-		NewMusic ("New", "battleship.mp3");
-=======
-		NewMusic ("New", "battleship.wav");
->>>>>>> Stashed changes
+		//NewMusic ("New", "battleship.mp3");
+		//NewMusic ("New", "battleship.wav");
 	}
 
 	/// <summary>
