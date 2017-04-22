@@ -36,7 +36,7 @@ static class UtilityFunctions
 	private static readonly Color SHIP_OUTLINE_COLOR = Color.White;
 
 	private static readonly Color MESSAGE_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
-	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (88, 147, 76, 255);
+	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (173, 255,47, 0);
 	public const int ANIMATION_CELLS = 7;
 
 	public const int FRAMES_PER_CELL = 8;
@@ -251,7 +251,7 @@ static class UtilityFunctions
 			case GameState.HowToPlay:
 
 			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
-			SwinGame.FillRectangle (SwinGame.RGBAColor(255,0,120,70), HOWTOPLAYOFFSET_LEFT - 20, HOWTOPLAYOFFSET_TOP - 20, 495, 410);
+			SwinGame.FillRectangle (SwinGame.RGBAColor(255,20,147,70), HOWTOPLAYOFFSET_LEFT - 20, HOWTOPLAYOFFSET_TOP - 20, 495, 410);
 			SwinGame.DrawText ("How To Play : BATTLESHIP", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 10 + HOWTOPLAYOFFSET_TOP);
 			SwinGame.DrawText ("*DIFFICULTY", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 50 + HOWTOPLAYOFFSET_TOP);
 			SwinGame.DrawText ("Choose between Easy, Medium and Hard", MENU_COLOR, GameResources.GameFont ("Menu"), HOWTOPLAYOFFSET_LEFT, 70 + HOWTOPLAYOFFSET_TOP);
