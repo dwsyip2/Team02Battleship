@@ -53,8 +53,8 @@ public static class GameResources
 	private static void LoadMusic()
 	{
 		NewMusic("Background", "horrordrone.mp3");
-		//NewMusic ("New", "battleship.mp3");
-		//NewMusic ("New", "battleship.wav");
+		NewMusic ("New", "battleship.mp3");
+
 	}
 
 	/// <summary>
