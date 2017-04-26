@@ -297,6 +297,9 @@ public static class GameController
 			case GameState.AlteringSetting:
 				MenuController.HandleSettingMenuInput ();
 				break;
+		    case GameState.BGMSettings:
+			    MenuController.HandleBGMMenuInput ();
+			    break;
 			case GameState.Deploying:
 				DeploymentController.HandleDeploymentInput();
 				break;
@@ -338,6 +341,9 @@ public static class GameController
 			case GameState.AlteringSetting:
 				MenuController.DrawSetting ();
 				break;
+		    case GameState.BGMSettings:
+			    MenuController.DrawBGMSettings ();
+			    break;
 			case GameState.Deploying:
 				DeploymentController.DrawDeployment();
 				break;
@@ -408,6 +414,7 @@ public static class GameController
 			SwinGame.StopMusic ();
 		else
 			SwinGame.PlayMusic(GameResources.GameMusic ("Background"));
+	
 	}
 
 	public static bool getSoundState {

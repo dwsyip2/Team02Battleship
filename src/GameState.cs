@@ -27,6 +27,10 @@ public enum GameState
 	HowToPlay,
 
 	/// <summary>
+	/// Change the Background Music
+	/// </summary>
+	BGMSettings,
+	/// <summary>
 	/// The player is altering the game difficulty
 	/// </summary>
 	AlteringSetup,
