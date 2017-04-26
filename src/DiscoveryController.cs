@@ -23,6 +23,12 @@ static class DiscoveryController
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
 			DoAttack();
 		}
+
+		if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
+			if (UtilityFunctions.IsMouseInRectangle (700, 550, 51, 46)) {
+				GameController.AddNewState (GameState.ViewingGameMenu);
+			}
+		}
 	}
 
 	/// <summary>
@@ -78,6 +84,7 @@ static class DiscoveryController
 		SwinGame.DrawText ("Destroyer", Color.White, GameResources.GameFont ("Courier"), 500, 80);
 		SwinGame.DrawText ("Battleship", Color.White, GameResources.GameFont ("Courier"), 500, 90);
 		SwinGame.DrawText ("Aircraft carrier", Color.White, GameResources.GameFont ("Courier"), 500, 100);
+		SwinGame.DrawBitmap (GameResources.GameImage ("ReturnButton"), 700, 550);
 
 		if (GameController.ComputerPlayer [ShipName.Tug].IsDestroyed) {
 			SwinGame.DrawText ("Terminated", Color.Red, GameResources.GameFont ("Courier"), 670, 60);

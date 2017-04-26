@@ -197,3 +197,4 @@ C:\Users\User\Team02Battleship\bin\Debug\normnfkc.nlp
 C:\Users\User\Team02Battleship\bin\Debug\normnfkd.nlp
 C:\Users\User\Team02Battleship\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
 C:\Users\User\Team02Battleship\obj\x86\Debug-Windows\MyGame.exe
+C:\Users\user\Documents\GitHub\Team02Battleship\bin\Debug\Resources\images\back-icon.png
