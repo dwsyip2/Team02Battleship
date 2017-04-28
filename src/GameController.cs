@@ -284,6 +284,10 @@ public static class GameController
 		//Read incoming input events
 		SwinGame.ProcessEvents();
 
+		if (SwinGame.KeyTyped (KeyCode.vk_f)) {
+			SwinGame.ToggleFullScreen ();
+		}
+
 		switch (CurrentState) {
 			case GameState.ViewingMainMenu:
 				MenuController.HandleMainMenuInput();

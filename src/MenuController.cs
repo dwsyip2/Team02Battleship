@@ -178,6 +178,7 @@ static class MenuController
 		return false;
 	}
 
+
 	/// <summary>
 	/// Draws the main menu to the screen.
 	/// </summary>
@@ -185,7 +186,8 @@ static class MenuController
 	{
 		//Clears the Screen to Black
 		//SwinGame.DrawText("Main Menu", Color.White, GameResources.GameFont("ArialLarge"), 50, 50)
-
+		GameResources.GameFont ("New").FontStyle = FontStyle.BoldFont;
+		SwinGame.DrawText ("Press 'F' to toggle Fullscreen", Color.AliceBlue, GameResources.GameFont ("New"), 15, 556);
 		DrawButtons(MAIN_MENU);
 	}
 
